@@ -1,0 +1,25 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "cpf": 12345678900,
+      "nome": "John Who",
+      "telefone": 12341234,
+      "email": "jonh@mail.com"
+    },
+    {
+      "id": 2,
+      "cpf": 12345678901,
+      "nome": "Mr X",
+      "telefone": 43214321,
+      "email": "mrx@mail.com"
+    },
+    {
+      "id": 3,
+      "cpf": 92183745021,
+      "nome": "Scarl Red",
+      "telefone": 32710923,
+      "email": "scarlred@mail.com"
+    }
+  ]
+}
