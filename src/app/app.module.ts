@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'listagem', component: TabelaComponent },
   { path: 'listagem/:msg', component: TabelaComponent },
   { path: 'cadastro', component: CadastroComponent }
-]
+];
 
 @NgModule({
   declarations: [

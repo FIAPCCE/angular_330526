@@ -9,10 +9,9 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent implements OnInit {
-  
   usuario: Usuario;
-  
-  constructor(
+
+  constructor (
     private service: UsuariosService,
     private router: Router,
     private route: ActivatedRoute
@@ -22,7 +21,7 @@ export class CadastroComponent implements OnInit {
     this.usuario = new Usuario(0, '', 0, '', 0);
     this.service.getUsuarios().subscribe(data => {
       this.usuario.id = ( data.length + 1 );
-    })
+    });
   }
 
   cadastrar(): any {

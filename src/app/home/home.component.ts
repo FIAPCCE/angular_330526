@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.service.getUsuarios().subscribe((data) => {
       this.qtd = data.length;
-    })
+    });
   }
 
 }
