@@ -20,14 +20,18 @@ export class EditarComponent implements OnInit {
   ngOnInit() {
     this.usuario = new Usuario(0, '', 0, '', 0);
     let id = this.route.snapshot.paramMap.get('id');
+    
     this.service.getUsuario(id).subscribe(
       data => this.usuario = data,
       err => this.router.navigate(['/usuarios/lista'])
     );
   }
 
-  // TODO: Add forma para envio dos dados para o Web Service
   editar(): any {
-
+    this.service.updateUsuario(this.usuario.id, this.usuario)
+      .subscribe(
+        data => this.router.navigate(['/usuarios/lista', 'editado']),
+        err => console.log(err)
+      );
   }
 }

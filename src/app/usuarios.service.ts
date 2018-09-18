@@ -21,8 +21,11 @@ export class UsuariosService {
     return this.HttpClient.get(`${this.URL}/usuarios/${id}`);
   }
   
-  // TODO: alterar este metodo para salvar os dados no Web Service
-  updateUsuario(id: any): any {
-    return this.HttpClient.get(`${this.URL}/usuarios/${id}`);
+  updateUsuario(id: any, usuario: Object): any {
+    return this.HttpClient.put(`${this.URL}/usuarios/${id}`, usuario);
+  }
+  
+  removeUsuario(id: any): any {
+    return this.HttpClient.delete(`${this.URL}/usuarios/${id}`);
   }
 }

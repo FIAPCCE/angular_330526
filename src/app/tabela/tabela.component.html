@@ -1,7 +1,7 @@
 <section class="container mt-2">
   <div *ngIf="flag" class="alert alert-success success">
-    <p> Novo usuario </p>
-    <p> usuario cadastrado com sucesso </p>
+    <p> Mensagem: </p>
+    <p> Usuario {{msg}} com sucesso! </p>
   </div>
   <div class="container-fluid">
     <h1 class="float-left"> <i class="fa fa-bars"></i> Listagem de Usuários </h1>
@@ -33,8 +33,10 @@
         <td> {{usuario.telefone}} </td>
         <td> {{usuario.email}} </td>
         <td> 
-          <a routerLink="/usuarios/{{usuario.id}}" class="btn btn-success"> <i class="fa fa-eye"></i> </a> |
-          <a routerLink="/listagem" class="btn btn-danger"> <i class="fa fa-trash"></i> </a>  
+          <a routerLink="/usuarios/{{usuario.id}}" class="btn btn-success"> 
+            <i class="fa fa-eye"></i>
+          </a> |
+          <button (click)="remover(usuario.id)" class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
         </td>
       </tr>
     </tbody>
