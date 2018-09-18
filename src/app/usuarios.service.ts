@@ -16,4 +16,13 @@ export class UsuariosService {
   setUsuario(usuario: Object): any {
     return this.HttpClient.post(`${this.URL}/usuarios`, usuario);
   }
+
+  getUsuario(id: any): any {
+    return this.HttpClient.get(`${this.URL}/usuarios/${id}`);
+  }
+  
+  // TODO: alterar este metodo para salvar os dados no Web Service
+  updateUsuario(id: any): any {
+    return this.HttpClient.get(`${this.URL}/usuarios/${id}`);
+  }
 }

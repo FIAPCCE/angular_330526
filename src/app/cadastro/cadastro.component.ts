@@ -26,6 +26,6 @@ export class CadastroComponent implements OnInit {
 
   cadastrar(): any {
     this.service.setUsuario(this.usuario)
-      .subscribe(res => this.router.navigate(['/listagem', 'cadastrado']));
+      .subscribe(res => this.router.navigate(['/usuarios/lista', 'cadastrado']));
   }
 }
