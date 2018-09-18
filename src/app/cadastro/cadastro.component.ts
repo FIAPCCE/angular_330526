@@ -20,12 +20,12 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
     this.usuario = new Usuario(0, '', 0, '', 0);
     this.service.getUsuarios().subscribe(data => {
-      this.usuario.id = ( data.length + 1 );
+      this.usuario.id = (data[(data.length - 1)].id + 1 );
     });
   }
 
   cadastrar(): any {
     this.service.setUsuario(this.usuario)
-      .subscribe(res => this.router.navigate(['/listagem', 'cadastrado']));
+      .subscribe(res => this.router.navigate(['/usuarios/lista', 'cadastrado']));
   }
 }

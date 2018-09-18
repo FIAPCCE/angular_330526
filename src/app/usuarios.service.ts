@@ -16,4 +16,16 @@ export class UsuariosService {
   setUsuario(usuario: Object): any {
     return this.HttpClient.post(`${this.URL}/usuarios`, usuario);
   }
+
+  getUsuario(id: any): any {
+    return this.HttpClient.get(`${this.URL}/usuarios/${id}`);
+  }
+  
+  updateUsuario(id: any, usuario: Object): any {
+    return this.HttpClient.put(`${this.URL}/usuarios/${id}`, usuario);
+  }
+  
+  removeUsuario(id: any): any {
+    return this.HttpClient.delete(`${this.URL}/usuarios/${id}`);
+  }
 }

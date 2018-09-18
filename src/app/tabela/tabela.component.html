@@ -1,18 +1,21 @@
 <section class="container mt-2">
   <div *ngIf="flag" class="alert alert-success success">
-    <p> Novo usuario </p>
-    <p> usuario cadastrado com sucesso </p>
+    <p> Mensagem: </p>
+    <p> Usuario {{msg}} com sucesso! </p>
   </div>
-  <form action="?" class="form-inline float-right">
-    <input 
-      class="form-control mr-sm-2" 
-      type="search" 
-      placeholder="Pesquise pelo nome" 
-      aria-label="Search"
-      name="query"
-      [(ngModel)]="query">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busca</button>
-  </form>
+  <div class="container-fluid">
+    <h1 class="float-left"> <i class="fa fa-bars"></i> Listagem de Usuários </h1>
+    <form action="?" class="form-inline float-right mt-2">
+        <input 
+          class="form-control mr-sm-2" 
+          type="search" 
+          placeholder="Pesquise pelo nome" 
+          aria-label="Search"
+          name="query"
+          [(ngModel)]="query">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busca</button>
+      </form>
+  </div>
   <table class="table mt-2">
     <thead>
       <tr>
@@ -20,6 +23,7 @@
         <th> Nome </th>
         <th> Telefone </th>
         <th> Email </th>
+        <th> Ação </th>
       </tr>
     </thead>
     <tbody>
@@ -28,6 +32,12 @@
         <td> {{usuario.nome}} </td>
         <td> {{usuario.telefone}} </td>
         <td> {{usuario.email}} </td>
+        <td> 
+          <a routerLink="/usuarios/{{usuario.id}}" class="btn btn-success"> 
+            <i class="fa fa-eye"></i>
+          </a> |
+          <button (click)="remover(usuario.id)" class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
+        </td>
       </tr>
     </tbody>
   </table>

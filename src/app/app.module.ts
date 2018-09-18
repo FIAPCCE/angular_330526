@@ -10,13 +10,18 @@ import { TabelaComponent } from './tabela/tabela.component';
 import { UsuarioPipe } from './usuario.pipe';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { EditarComponent } from './editar/editar.component';
+import { ErroComponent } from './erro/erro.component';
 
 // Rotas
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'listagem', component: TabelaComponent },
-  { path: 'listagem/:msg', component: TabelaComponent },
-  { path: 'cadastro', component: CadastroComponent }
+  { path: 'usuarios/lista', component: TabelaComponent },
+  { path: 'usuarios/lista/:msg', component: TabelaComponent },
+  { path: 'usuarios/novo', component: CadastroComponent },
+  { path: 'usuarios/:id', component: EditarComponent },
+  { path: 'usuarios', redirectTo: 'usuarios/lista' },
+  { path: '**', component: ErroComponent }
 ];
 
 @NgModule({
@@ -26,7 +31,9 @@ const routes: Routes = [
     TabelaComponent,
     UsuarioPipe,
     HomeComponent,
-    CadastroComponent
+    CadastroComponent,
+    EditarComponent,
+    ErroComponent
   ],
   imports: [
     BrowserModule,
